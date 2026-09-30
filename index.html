@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김민수 - 프로필</title>
+    <!-- Vercel 스타일의 핵심인 깔끔한 Inter 폰트 적용 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text-main: #000000;
+            --text-muted: #666666;
+            --border: #eaeaea;
+            --accents-1: #fafafa;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 768px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Top Navigation */
+        nav {
+            border-bottom: 1px solid var(--border);
+            padding: 16px 0;
+            display: flex;
+            justify-content: center;
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            z-index: 50;
+        }
+        
+        nav .logo {
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: -0.02em;
+            color: var(--text-main);
+        }
+
+        /* Hero Profile Section */
+        .hero {
+            padding: 100px 0 80px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid var(--border);
+            margin-bottom: 24px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.05em;
+            margin: 0 0 12px;
+        }
+
+        .hero p.subtitle {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin: 0 0 24px;
+            letter-spacing: -0.02em;
+            font-weight: 500;
+        }
+
+        .hero p.desc {
+            font-size: 15px;
+            color: var(--text-muted);
+            max-width: 520px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-header {
+            margin-bottom: 32px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border: 1px solid var(--border);
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-main);
+            background: var(--accents-1);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .section h2 {
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: -0.03em;
+            margin: 0 0 12px;
+        }
+
+        .section p {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Card (Product/Book) */
+        .card {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 40px;
+            background: var(--bg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+            border-color: #ddd;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--text-main);
+            color: var(--bg);
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: 1px solid var(--text-main);
+            margin-top: 24px;
+        }
+
+        .btn:hover {
+            background: var(--bg);
+            color: var(--text-main);
+        }
+
+        .book-img {
+            max-width: 180px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            margin-top: 32px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+        }
+
+        /* Video Section */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            background: var(--accents-1);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <span class="logo">minsu.</span>
+    </nav>
+
+    <div class="container">
+        <!-- 프로필 섹션 -->
+        <section class="hero">
+            <img src="profile.jpg" alt="프로필 사진" class="profile-img" onerror="this.src='https://via.placeholder.com/200/eee/333?text=Profile'">
+            <h1>김민수</h1>
+            <p class="subtitle">디자인. 혁신. 그리고 나.</p>
+            <p class="desc">
+                여기에 소개 내용이 들어갑니다. (소개글 텍스트 파일 내용을 이곳에 복사해서 넣어주세요.)<br>
+                제 개인 랜딩 페이지에 오신 것을 환영합니다. 끊임없이 새로움을 추구합니다.
+            </p>
+        </section>
+
+        <!-- 책 섹션 (Card 스타일) -->
+        <section class="section">
+            <div class="section-header">
+                <div class="badge">New Release</div>
+                <h2>새로운 책. 놀라운 경험.</h2>
+                <p>책에 대한 간략한 소개를 여기에 적어주세요. 완전히 새로운 시각을 선사합니다.</p>
+            </div>
+            
+            <div class="card">
+                <h3 style="margin: 0 0 8px; font-weight: 500;">저서 제목</h3>
+                <p>독자들에게 전하고 싶은 핵심 메시지</p>
+                <a href="https://교보문고.링크.입력" class="btn" target="_blank">구입하기</a>
+                <img src="book.jpg" alt="책 표지" class="book-img" onerror="this.src='https://via.placeholder.com/300x450/eee/333?text=Book'">
+            </div>
+        </section>
+
+        <!-- 유튜브 섹션 -->
+        <section class="section" style="border-bottom: none;">
+            <div class="section-header">
+                <div class="badge">Media</div>
+                <h2>영감의 순간을 영상으로.</h2>
+                <p>최근 강연이나 인터뷰 영상을 공유합니다.</p>
+            </div>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <footer>
+            &copy; 2026 Minsu Kim. All rights reserved.
+        </footer>
+    </div>
+
+</body>
+</html>
